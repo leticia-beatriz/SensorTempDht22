@@ -1,0 +1,185 @@
+\hypertarget{main_8cpp}{}\doxysection{C\+:/\+Users/\+User/\+One\+Drive/\+Documentos/\+Platform\+IO/\+Projects/sensor de temperatura/src/main.cpp File Reference}
+\label{main_8cpp}\index{C:/Users/User/OneDrive/Documentos/PlatformIO/Projects/sensor de temperatura/src/main.cpp@{C:/Users/User/OneDrive/Documentos/PlatformIO/Projects/sensor de temperatura/src/main.cpp}}
+{\ttfamily \#include $<$Arduino.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}DHT.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{main_8cpp_af1ae7d9f44b8c2d828d0c01d081e1a1c}{sensor}}~11     /$\ast$ SENSOR DHT LOCADO NA PORTA 11$\ast$/
+\item 
+\#define \mbox{\hyperlink{main_8cpp_aaab254f1ab048bc7bff5d441c8faf2fc}{tipo\+\_\+sensor}}~DHT22 /$\ast$ TIPO DE SENSOR UTILIZADO\+: DHT22$\ast$/
+\item 
+\#define \mbox{\hyperlink{main_8cpp_aaa6695db44a446d64651cdda7d89b67b}{buzina}}~12     /$\ast$BUZZER LOCADO NA PORTA 12$\ast$/
+\item 
+\#define \mbox{\hyperlink{main_8cpp_a4b11a6b807bd51b1d0e61f47c506b240}{interruptor}}~13 /$\ast$ INTERRUPITOR DESLIZANTE LOCADO NA PORTA 13$\ast$/
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+DHT \mbox{\hyperlink{main_8cpp_ad41161b9b4365f50729b4436358ec698}{dht}} (\mbox{\hyperlink{main_8cpp_af1ae7d9f44b8c2d828d0c01d081e1a1c}{sensor}}, \mbox{\hyperlink{main_8cpp_aaab254f1ab048bc7bff5d441c8faf2fc}{tipo\+\_\+sensor}})
+\item 
+void \mbox{\hyperlink{main_8cpp_a1d04139db3a5ad5713ecbd14d97da879}{setup}} ()
+\begin{DoxyCompactList}\small\item\em realiza o setup do sistema \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_a11debc633c690ca19cb27df5f971d73d}{loop}} ()
+\begin{DoxyCompactList}\small\item\em realiza o loop principal do sistema \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8cpp_a6a2fb9a759add5686a3738d8b00fac9a}{temperatura}} =0
+\item 
+int \mbox{\hyperlink{main_8cpp_ae25feaf2fb1f2146c81ef82006c2ee22}{umidade}} =0
+\item 
+int \mbox{\hyperlink{main_8cpp_a9a10f31374bf08e00de987f0e4c7101a}{dezena}} =0
+\item 
+int \mbox{\hyperlink{main_8cpp_a24e4277e88659c6b717729755b11fe96}{unidade}} =0
+\item 
+int \mbox{\hyperlink{main_8cpp_a14f3a167caadca1ebf3c9a03a57fdcb6}{valormaior}} =32
+\item 
+int \mbox{\hyperlink{main_8cpp_a05f99429cb539e221f5f924a5a2ccd5c}{valormenor}} =0
+\item 
+int \mbox{\hyperlink{main_8cpp_a8c82c9c8d9ead7c6efdc2e357506e798}{saidas}} \mbox{[}$\,$\mbox{]} =\{2,3,4,5,6,7,8,9,10,\}
+\item 
+int \mbox{\hyperlink{main_8cpp_a21b6de08b29bee3940b4ad0aa8db58f9}{pinos}} \mbox{[}10\mbox{]}\mbox{[}7\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{main_8cpp_aaa6695db44a446d64651cdda7d89b67b}\label{main_8cpp_aaa6695db44a446d64651cdda7d89b67b}} 
+\index{main.cpp@{main.cpp}!buzina@{buzina}}
+\index{buzina@{buzina}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{buzina}{buzina}}
+{\footnotesize\ttfamily \#define buzina~12     /$\ast$BUZZER LOCADO NA PORTA 12$\ast$/}
+
+\mbox{\Hypertarget{main_8cpp_a4b11a6b807bd51b1d0e61f47c506b240}\label{main_8cpp_a4b11a6b807bd51b1d0e61f47c506b240}} 
+\index{main.cpp@{main.cpp}!interruptor@{interruptor}}
+\index{interruptor@{interruptor}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{interruptor}{interruptor}}
+{\footnotesize\ttfamily \#define interruptor~13 /$\ast$ INTERRUPITOR DESLIZANTE LOCADO NA PORTA 13$\ast$/}
+
+\mbox{\Hypertarget{main_8cpp_af1ae7d9f44b8c2d828d0c01d081e1a1c}\label{main_8cpp_af1ae7d9f44b8c2d828d0c01d081e1a1c}} 
+\index{main.cpp@{main.cpp}!sensor@{sensor}}
+\index{sensor@{sensor}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{sensor}{sensor}}
+{\footnotesize\ttfamily \#define sensor~11     /$\ast$ SENSOR DHT LOCADO NA PORTA 11$\ast$/}
+
+\mbox{\Hypertarget{main_8cpp_aaab254f1ab048bc7bff5d441c8faf2fc}\label{main_8cpp_aaab254f1ab048bc7bff5d441c8faf2fc}} 
+\index{main.cpp@{main.cpp}!tipo\_sensor@{tipo\_sensor}}
+\index{tipo\_sensor@{tipo\_sensor}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{tipo\_sensor}{tipo\_sensor}}
+{\footnotesize\ttfamily \#define tipo\+\_\+sensor~DHT22 /$\ast$ TIPO DE SENSOR UTILIZADO\+: DHT22$\ast$/}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_ad41161b9b4365f50729b4436358ec698}\label{main_8cpp_ad41161b9b4365f50729b4436358ec698}} 
+\index{main.cpp@{main.cpp}!dht@{dht}}
+\index{dht@{dht}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{dht()}{dht()}}
+{\footnotesize\ttfamily DHT dht (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{main_8cpp_af1ae7d9f44b8c2d828d0c01d081e1a1c}{sensor}}}]{,  }\item[{\mbox{\hyperlink{main_8cpp_aaab254f1ab048bc7bff5d441c8faf2fc}{tipo\+\_\+sensor}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8cpp_a11debc633c690ca19cb27df5f971d73d}\label{main_8cpp_a11debc633c690ca19cb27df5f971d73d}} 
+\index{main.cpp@{main.cpp}!loop@{loop}}
+\index{loop@{loop}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{loop()}{loop()}}
+{\footnotesize\ttfamily loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+realiza o loop principal do sistema 
+
+\begin{DoxyReturn}{Returns}
+verifica se ouve falha na leitura do sensor 
+\end{DoxyReturn}
+VAI DAR O RESULTADO QUE DEVE APARECER NO VISOR DE DE 7 SEGMENTOS CLASSIFICADO COMO DEZENA
+
+VAI DAR O RESULTADO QUE DEVE APARECER NO VISOR DE DE 7 SEGMENTOS CLASSIFICADO COMO UNIDADE
+
+ACIONA AS BUZINAS SE A TEMPERATURA FOR MAIOR OU MENOR DO QUE O ESPERADO. SE O ALARME FOR ACIONADO ELE PODE SER DESLIGADO PELO INTERRUPTOR\mbox{\Hypertarget{main_8cpp_a1d04139db3a5ad5713ecbd14d97da879}\label{main_8cpp_a1d04139db3a5ad5713ecbd14d97da879}} 
+\index{main.cpp@{main.cpp}!setup@{setup}}
+\index{setup@{setup}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily setup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+realiza o setup do sistema 
+
+
+\begin{DoxyParams}{Parameters}
+{\em não} & há parametros de entrada \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+não a paramêtros de saida 
+\end{DoxyReturn}
+\begin{DoxyRemark}{Remarks}
+função padrão arduino 
+\end{DoxyRemark}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{main_8cpp_a9a10f31374bf08e00de987f0e4c7101a}\label{main_8cpp_a9a10f31374bf08e00de987f0e4c7101a}} 
+\index{main.cpp@{main.cpp}!dezena@{dezena}}
+\index{dezena@{dezena}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{dezena}{dezena}}
+{\footnotesize\ttfamily int dezena =0}
+
+\mbox{\Hypertarget{main_8cpp_a21b6de08b29bee3940b4ad0aa8db58f9}\label{main_8cpp_a21b6de08b29bee3940b4ad0aa8db58f9}} 
+\index{main.cpp@{main.cpp}!pinos@{pinos}}
+\index{pinos@{pinos}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{pinos}{pinos}}
+{\footnotesize\ttfamily int pinos\mbox{[}10\mbox{]}\mbox{[}7\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    }
+\DoxyCodeLine{                 \{1,1,1,1,1,1,0\}, }
+\DoxyCodeLine{                 \{0,1,1,0,0,0,0\}, }
+\DoxyCodeLine{                 \{1,1,0,1,1,0,1\}, }
+\DoxyCodeLine{                 \{1,1,1,1,0,0,1\}, }
+\DoxyCodeLine{                 \{0,1,1,0,0,1,1\}, }
+\DoxyCodeLine{                 \{1,0,1,1,0,1,1\}, }
+\DoxyCodeLine{                 \{1,0,1,1,1,1,1\}, }
+\DoxyCodeLine{                 \{1,1,1,0,0,0,0\}, }
+\DoxyCodeLine{                 \{1,1,1,1,1,1,1\}, }
+\DoxyCodeLine{                 \{1,1,1,1,0,1,1\}  }
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8cpp_a8c82c9c8d9ead7c6efdc2e357506e798}\label{main_8cpp_a8c82c9c8d9ead7c6efdc2e357506e798}} 
+\index{main.cpp@{main.cpp}!saidas@{saidas}}
+\index{saidas@{saidas}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{saidas}{saidas}}
+{\footnotesize\ttfamily int saidas\mbox{[}$\,$\mbox{]} =\{2,3,4,5,6,7,8,9,10,\}}
+
+\mbox{\Hypertarget{main_8cpp_a6a2fb9a759add5686a3738d8b00fac9a}\label{main_8cpp_a6a2fb9a759add5686a3738d8b00fac9a}} 
+\index{main.cpp@{main.cpp}!temperatura@{temperatura}}
+\index{temperatura@{temperatura}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{temperatura}{temperatura}}
+{\footnotesize\ttfamily int temperatura =0}
+
+\mbox{\Hypertarget{main_8cpp_ae25feaf2fb1f2146c81ef82006c2ee22}\label{main_8cpp_ae25feaf2fb1f2146c81ef82006c2ee22}} 
+\index{main.cpp@{main.cpp}!umidade@{umidade}}
+\index{umidade@{umidade}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{umidade}{umidade}}
+{\footnotesize\ttfamily int umidade =0}
+
+\mbox{\Hypertarget{main_8cpp_a24e4277e88659c6b717729755b11fe96}\label{main_8cpp_a24e4277e88659c6b717729755b11fe96}} 
+\index{main.cpp@{main.cpp}!unidade@{unidade}}
+\index{unidade@{unidade}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{unidade}{unidade}}
+{\footnotesize\ttfamily int unidade =0}
+
+\mbox{\Hypertarget{main_8cpp_a14f3a167caadca1ebf3c9a03a57fdcb6}\label{main_8cpp_a14f3a167caadca1ebf3c9a03a57fdcb6}} 
+\index{main.cpp@{main.cpp}!valormaior@{valormaior}}
+\index{valormaior@{valormaior}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{valormaior}{valormaior}}
+{\footnotesize\ttfamily int valormaior =32}
+
+\mbox{\Hypertarget{main_8cpp_a05f99429cb539e221f5f924a5a2ccd5c}\label{main_8cpp_a05f99429cb539e221f5f924a5a2ccd5c}} 
+\index{main.cpp@{main.cpp}!valormenor@{valormenor}}
+\index{valormenor@{valormenor}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{valormenor}{valormenor}}
+{\footnotesize\ttfamily int valormenor =0}
+
